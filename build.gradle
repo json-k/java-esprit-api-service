@@ -1,0 +1,22 @@
+apply from: 'service.gradle'
+
+/*
+* Specific Project Dependencies
+* 
+* - providedCompile - will be added to the parent service
+* - endorsed - also on parent (and endorsed of course)
+* - compile - included in WAR as expected
+*/
+dependencies {
+	//providedCompile 'x:x:x'
+	 compile 'org.mvel:mvel2:2.2.2.Final'
+	 providedCompile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.17'
+	 providedCompile 'org.glassfish.jersey.core:jersey-server:2.17'
+	 providedCompile 'org.glassfish.jersey.bundles:jaxrs-ri:2.25'
+	 providedCompile 'org.keeber:esprit-api-client:0.2.6'
+}
+
+task preRelease(){
+	description "This task is hook to the main release task - it can be replace with your own code."
+}
+
